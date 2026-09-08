@@ -1,0 +1,1 @@
+export default function VariantSelector({variants,selectedId,onSelect}){return <div className="variant-list">{variants.map(v=><button key={v.id} type="button" className={`variant ${selectedId===v.id?"selected":""}`} onClick={()=>onSelect(v.id)}>{v.label}</button>)}</div>}
