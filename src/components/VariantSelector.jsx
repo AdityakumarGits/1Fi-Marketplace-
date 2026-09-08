@@ -1,1 +1,26 @@
-export default function VariantSelector({variants,selectedId,onSelect}){return <div className="variant-list">{variants.map(v=><button key={v.id} type="button" className={`variant ${selectedId===v.id?"selected":""}`} onClick={()=>onSelect(v.id)}>{v.label}</button>)}</div>}
+import React from "react";
+
+export default function VariantSelector({
+  variants,
+  selectedId,
+  onSelect,
+}) {
+  return (
+    <div className="variant-list">
+      {variants.map((variant) => (
+        <button
+          key={variant.id}
+          type="button"
+          className={`variant ${
+            selectedId === variant.id
+              ? "selected"
+              : ""
+          }`}
+          onClick={() => onSelect(variant.id)}
+        >
+          {variant.label}
+        </button>
+      ))}
+    </div>
+  );
+}
